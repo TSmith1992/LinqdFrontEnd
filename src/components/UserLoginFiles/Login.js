@@ -92,7 +92,7 @@ export default function Login(setCurrentUser, currentUser) {
         <p>-- or --</p>
         <Button variant="contained" color="secondary" className="TestLink">
           <Link to="/signup" style={{ color: "white" }}>
-            Initiate Processing
+            Signup Here
           </Link>
         </Button>
       </form>
