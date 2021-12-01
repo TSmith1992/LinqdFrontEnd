@@ -1,24 +1,48 @@
-
-
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import HomePage from "./HomePage";
+import LoginTree from "./LoginTree";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false);
+
+  useEffect(() => {
+    fetch("/me", {
+      credentials: "include",
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((user) => {
+          if (user) {
+            setCurrentUser(user);
+            setAuthChecked(true);
+          } else {
+            setCurrentUser(user);
+            setAuthChecked(true);
+          }
+        });
+      } else {
+        setAuthChecked(true);
+      }
+    });
+  }, []);
+
+  if (authChecked) {
+    return <div>"test"</div>;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src='https://m.media-amazon.com/images/I/51GWpiHp6YL._AC_.jpg'
-        alt="spiderweb logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        {currentUser ? (
+          <HomePage setCurrentUser={setCurrentUser} currentUser={currentUser} />
+        ) : (
+          <LoginTree
+            setCurrentUser={setCurrentUser}
+            currentUser={currentUser}
+          />
+        )}
+      </Router>
     </div>
   );
 }
