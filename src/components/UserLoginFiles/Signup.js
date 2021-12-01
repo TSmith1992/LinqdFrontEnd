@@ -163,19 +163,13 @@ function Signup({ setCurrentUser, currentUser }) {
             variant="contained"
             color="primary"
           >
-            Enter Profile ✍️<p></p>
+            Enter Profile ✍️
           </Button>
         </p>
         <p>-- or --</p>
         <Button variant="contained" color="secondary" className="TestLink">
           <Link to="/login" class="Links" style={{ color: "white" }}>
-            Log In <p></p>
-            <img
-              src="https://www.pngfind.com/pngs/m/15-158073_apply-open-a-personal-account-icon-blue-member.png"
-              alt="login"
-              width="10px"
-              height="10px"
-            />
+            Log In 👋 
           </Link>
         </Button>
       </form>
