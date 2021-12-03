@@ -36,7 +36,7 @@ function Signup({ setCurrentUser, currentUser }) {
           gender: gender,
           picture: picture,
           description,
-          birthdate: birthdate,
+          birthdate: birthdate
         }),
       }).then((res) => {
         if (res.ok) {

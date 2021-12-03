@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect, useHistory, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
-export default function Login(setCurrentUser, currentUser) {
+export default function Login({setCurrentUser, currentUser}) {
   const history = useHistory();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -93,6 +93,19 @@ export default function Login(setCurrentUser, currentUser) {
         <Button variant="contained" color="secondary" className="TestLink">
           <Link to="/signup" style={{ color: "white" }}>
             Signup Here
+          </Link>
+        </Button>
+        <Button variant="contained" color="secondary" className="TestLink" onClick={(e)=>{
+            setCurrentUser({
+                name:'Test',
+                password:123,
+                gender:'Female',
+                picture:'https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10n7ovy_9b42e613.jpeg?region=0,0,450,450',
+                description:'Test description'
+            })
+            history.push("/homepage")}}>
+          <Link to="/homepage" style={{ color: "white" }}>
+            Test Account Click
           </Link>
         </Button>
       </form>

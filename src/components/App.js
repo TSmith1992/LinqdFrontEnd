@@ -7,25 +7,25 @@ function App() {
   const [currentUser, setCurrentUser] = useState(false);
   const [authChecked, setAuthChecked] = useState(false);
 
-  useEffect(() => {
-    fetch("/me", {
-      credentials: "include",
-    }).then((res) => {
-      if (res.ok) {
-        res.json().then((user) => {
-          if (user) {
-            setCurrentUser(user);
-            setAuthChecked(true);
-          } else {
-            setCurrentUser(user);
-            setAuthChecked(true);
-          }
-        });
-      } else {
-        setAuthChecked(true);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/me", {
+  //     credentials: "include",
+  //   }).then((res) => {
+  //     if (res.ok) {
+  //       res.json().then((user) => {
+  //         if (user) {
+  //           setCurrentUser(user);
+  //           setAuthChecked(true);
+  //         } else {
+  //           setCurrentUser(user);
+  //           setAuthChecked(true);
+  //         }
+  //       });
+  //     } else {
+  //       setAuthChecked(true);
+  //     }
+  //   });
+  // }, []);
 
   if (authChecked) {
     return <div>"test"</div>;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./UserLoginFiles/Login";
 import Signup from "./UserLoginFiles/Signup";
 
-export default function LoginTree(setCurrentUser, currentUser) {
+export default function LoginTree({setCurrentUser, currentUser}) {
   return (
     <Switch>
       <Route exact path="/">

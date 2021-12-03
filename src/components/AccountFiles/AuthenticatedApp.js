@@ -2,7 +2,7 @@ import Homepage from './HomePage'
 import React from "react";
 import {Switch, Route} from 'react-router-dom'
 
-export default function AuthenticatedApp(currentUser, setCurrentUser) {
+export default function AuthenticatedApp({currentUser, setCurrentUser}) {
   return (
     <div>
       <Switch>
