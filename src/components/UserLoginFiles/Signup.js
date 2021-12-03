@@ -168,7 +168,7 @@ function Signup({ setCurrentUser, currentUser }) {
         </p>
         <p>-- or --</p>
         <Button variant="contained" color="secondary" className="TestLink">
-          <Link to="/login" class="Links" style={{ color: "white" }}>
+          <Link to="/" class="Links" style={{ color: "white" }}>
             Log In 👋 
           </Link>
         </Button>
